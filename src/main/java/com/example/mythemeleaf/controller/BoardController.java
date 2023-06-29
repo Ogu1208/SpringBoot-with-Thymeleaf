@@ -3,6 +3,7 @@ package com.example.mythemeleaf.controller;
 import com.example.mythemeleaf.Repository.BoardRepository;
 import com.example.mythemeleaf.domain.Board;
 import com.example.mythemeleaf.validator.BoardValidator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/board")
 public class BoardController {
 
-    @Autowired
-    private BoardRepository boardRepository;
-
-    @Autowired
-    private BoardValidator boardValidator;
+    private final BoardRepository boardRepository;
+    private final BoardValidator boardValidator;
 
     @GetMapping("/list")
     public String list(Model model) {

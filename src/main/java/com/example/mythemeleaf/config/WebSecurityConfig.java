@@ -29,7 +29,7 @@ public class WebSecurityConfig {
     private final DataSource dataSource;
 
     @Bean
-    public static PasswordEncoder passwordEncoder() {  // 비밀번호 암호화
+    public static BCryptPasswordEncoder  passwordEncoder() {  // 비밀번호 암호화
         return new BCryptPasswordEncoder();
     }
 

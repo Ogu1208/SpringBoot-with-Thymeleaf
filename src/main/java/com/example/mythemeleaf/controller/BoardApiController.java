@@ -2,6 +2,7 @@ package com.example.mythemeleaf.controller;
 
 import com.example.mythemeleaf.Repository.BoardRepository;
 import com.example.mythemeleaf.domain.Board;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.util.StringUtils;
@@ -9,11 +10,11 @@ import org.thymeleaf.util.StringUtils;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class BoardApiController {
 
-    @Autowired
-    private BoardRepository boardRepository;
+    private final BoardRepository boardRepository;
 
 
     // Aggregate root
